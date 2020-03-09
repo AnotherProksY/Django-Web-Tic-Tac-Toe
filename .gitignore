@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# RAR or other type of compressed archives
+*.rar
+*.tar*
+
 # C extensions
 *.so
 
