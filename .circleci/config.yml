@@ -20,7 +20,7 @@ jobs:
                   mkdir test-results
                   mkdir test-reports
                   pipenv run flake8 --statistics
-                  python3 manage.py test
+                  pipenv run python3 manage.py test
             - store_test_results:
                 path: test-results
             - store_artifacts:
