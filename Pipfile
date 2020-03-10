@@ -9,7 +9,6 @@ pre-commit = "*"
 codacy-coverage = "*"
 pytest = "*"
 pytest-cov = "*"
-django = "*"
 
 [packages]
 django = "*"
