@@ -20,9 +20,7 @@ jobs:
                   mkdir test-results
                   mkdir test-reports
                   pipenv run flake8 --statistics
-                  pipenv run pytest --cov tests/
-                  pipenv run coverage xml
-                  pipenv run python-codacy-coverage -r coverage.xml
+                  python3 manage.py test
             - store_test_results:
                 path: test-results
             - store_artifacts:
