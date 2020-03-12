@@ -17,6 +17,7 @@ jobs:
             - run:
                 name: run tests
                 command: |
+                  echo "export SECRET_KEY='not_secret'" > .env
                   mkdir test-results
                   mkdir test-reports
                   pipenv run flake8 --statistics
