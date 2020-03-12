@@ -11,7 +11,5 @@ pytest = "*"
 pytest-cov = "*"
 
 [packages]
+python-dotenv = "*"
 django = "*"
-
-[requires]
-python_version = "3.7"
