@@ -7,7 +7,3 @@ def index(request):
 
 def play(request):
     return render(request, "play.html", locals())
-
-
-def score(request):
-    return render(request, "score.html", locals())
