@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/buttons.css">
+    <script src="static/main.js" defer></script>
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+  </head>
+
+  <body>
+    <!-- body open -->
+
+    <div class="wrapper">
+      <header>
+        <h1><span class="game-title" id="message">Player X turn</span></h1>
+      </header>
+
+      <main>
+        <!-- main open -->
+
+        <div class="gameView game">
+          <table>
+            <tr>
+              <td id="1" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="1"></td>
+              <td id="2" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="2"></td>
+              <td id="4" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="3"></td>
+            </tr>
+            <tr>
+              <td id="4" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="4"></td>
+              <td id="5" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="5"></td>
+              <td id="6" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="6"></td>
+            </tr>
+            <tr>
+              <td id="7" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="7"></td>
+              <td id="8" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="8"></td>
+              <td id="9" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="9"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="button">
+            <button id="reset-game" class="click">Clear</button>
+        </div>
+        
+        <p id="alert">Hey! Choose another field.</p>
+
+      </main> <!-- main close -->
+      <div class="push"></div>
+    </div>
+
+    <footer class="footer">
+      <!-- footer open -->
+      <div class="images">
+        <div class="image" id="GitHub">
+          <a href="https://github.com/AnotherProksY?tab=repositories">
+            <img src="static/GitHub-Logo.png" height="39" width="150" alt="GitHub Logo">
+          </a>
+        </div>
+        <div class="image" id="MyFace">
+          <a href="https://github.com/AnotherProksY?tab=repositories">
+            <img src="static/My Face.png" height="40" width="40" alt="My p1ixel art face">
+          </a>
+        </div>
+      </div>
+    </footer> <!-- footer close -->
+
+  </body> <!-- body close -->
+</html>

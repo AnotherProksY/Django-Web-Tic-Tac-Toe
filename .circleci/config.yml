@@ -1,0 +1,29 @@
+version: 2
+jobs:
+    build:
+        working_directory: ~/Django-Web-Tic-Tac-Toe
+        docker:
+            - image: circleci/python:3.7.6
+              environment:
+                PIPENV_VENV_IN_PROJECT: true
+        steps:
+            - checkout
+            - run:
+                name: install dependencies
+                command: |
+                  sudo pip install --upgrade pipenv
+                  pipenv install --clear --dev
+                  pipenv update
+            - run:
+                name: run tests
+                command: |
+                  echo "export SECRET_KEY='not_secret'" > .env
+                  mkdir test-results
+                  mkdir test-reports
+                  pipenv run flake8 --statistics
+                  pipenv run python3 manage.py test
+            - store_test_results:
+                path: test-results
+            - store_artifacts:
+                path: test-results
+                destination: test-reports
