@@ -5,6 +5,7 @@
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="static/buttons.css">
+    <script src="static/main.js" defer></script>
     <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
     <link rel="icon" href="static/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width">
@@ -15,68 +16,38 @@
 
     <div class="wrapper">
       <header>
-        <h1>Game Starts</h1>
+        <!-- <h1>Game Starts</h1> -->
+        <h1><span class="game-title" id="message">Player X turn</span></h1>
       </header>
 
       <main>
         <!-- main open -->
 
-        <form id="form-id" action="/Turn" method="post">
-          <div class="gameView">
-            <table>
-              <tr>
-                <td id="1" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_1}}</td>
-                <td id="2" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_2}}</td>
-                <td id="3" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_3}}</td>
-              </tr>
-              <tr>
-                <td id="4" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_4}}</td>
-                <td id="5" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_5}}</td>
-                <td id="6" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_6}}</td>
-              </tr>
-              <tr>
-                <td id="7" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_7}}</td>
-                <td id="8" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_8}}</td>
-                <td id="9" onmouseover="checkObj(this);" onmouseout="setColor(this);" onclick="submitForm(this.id);">{{place_9}}</td>
-              </tr>
-            </table>
-          </div>
-          <input id="setValue" name="myTurn" type="hidden" value=""/>
-        </form>
+        <div class="gameView game">
+          <table>
+            <tr>
+              <td id="1" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="1"></td>
+              <td id="2" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="2"></td>
+              <td id="4" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="3"></td>
+            </tr>
+            <tr>
+              <td id="4" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="4"></td>
+              <td id="5" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="5"></td>
+              <td id="6" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="6"></td>
+            </tr>
+            <tr>
+              <td id="7" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="7"></td>
+              <td id="8" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="8"></td>
+              <td id="9" onmouseover="checkObj(this);" onmouseout="setColor(this);" class="game-item" data-ceil="9"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="button">
+            <button id="reset-game" class="click">Clear</button>
+        </div>
         
         <p id="alert">Hey! Choose another field.</p>
-
-        <script type="text/javascript">
-          var globalCheck = true;
-          var p = document.getElementById("alert");
-          p.style.opacity = 0;
-
-          function checkObj(obj){
-            if (obj.textContent == 'X' || obj.textContent == 'O'){
-              obj.style.background = '#AB2217';
-              globalCheck = false;
-              p.style.opacity = 1;
-            } else {
-              obj.style.background = '#228B22';
-              globalCheck = true;
-            };
-          };
-
-          function setColor(obj){
-            if (obj.style.background != '#222'){
-              obj.style.background = '#222';
-              p.style.opacity = 0;
-            };
-          };
-
-          function submitForm(id){
-            if (globalCheck){
-              var form = document.getElementById("form-id");
-              document.getElementById("setValue").value = id;
-              form.submit();
-            };
-          };
-        </script>
 
       </main> <!-- main close -->
       <div class="push"></div>

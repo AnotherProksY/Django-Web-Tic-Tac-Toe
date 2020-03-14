@@ -53,6 +53,17 @@ main {
 .push {
   height: 50px;
 }
+
+.game-item:hover {
+  background-color: #ccc;
+}
+.game-item .o {
+  background-color: #abfdab;
+}
+
+.game-item .x {
+  background-color: #ff9999;
+}
 /* ---------- */
 
 
